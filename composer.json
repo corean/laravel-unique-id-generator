@@ -1,10 +1,10 @@
 {
-    "name": "sirajcse/laravel-unique-id-generator",
+    "name": "corean/laravel-unique-id-generator",
     "description": "Generate custom Unique ID or Code (With Prefix or Suffix Or Both Or Only Unique Id) Or reset your ID after change of Prefix or Suffix Or Both  in laravel framework",
     "authors": [
         {
-            "name": "Md. Siraj-Ud-Doulla",
-            "email": "sirajuddoulla@gmail.com"
+            "name": "corean",
+            "email": "corean@corena.biz"
         }
     ],
     "minimum-stability": "dev",
@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "sirajcse\\UniqueIdGenerator\\": "src/"
+            "corean\\UniqueIdGenerator\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "sirajcse\\UniqueIdGenerator\\UniqueIdGeneratorServiceProvider"
+                "corean\\UniqueIdGenerator\\UniqueIdGeneratorServiceProvider"
             ]
         }
     }
