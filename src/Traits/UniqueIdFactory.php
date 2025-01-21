@@ -1,6 +1,6 @@
-<?php namespace sirajcse\UniqueIdGenerator\Traits;
+<?php namespace corean\UniqueIdGenerator\Traits;
 
-use sirajcse\UniqueIdGenerator\UniqueIdGenerator;
+use corean\UniqueIdGenerator\UniqueIdGenerator;
 
 trait UniqueIdFactory
 {

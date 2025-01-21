@@ -1,4 +1,4 @@
-<?php namespace sirajcse\UniqueIdGenerator;
+<?php namespace corean\UniqueIdGenerator;
 
 use Illuminate\Support\Facades\DB, Exception;
 
@@ -46,7 +46,10 @@ class UniqueIdGenerator
         if ($fieldType == null) throw new Exception("$field not found in $table table");
         return ['type' => $fieldType, 'length' => $fieldLength];
     }
-    
+
+    /**
+     * @throws \Exception
+     */
     public static function generate($configArr)
     {
         if (!array_key_exists('table', $configArr) || $configArr['table'] == '') {
@@ -56,10 +59,6 @@ class UniqueIdGenerator
             throw new Exception('Must specify the length of ID');
         }
 
-//        if (!array_key_exists('prefix', $configArr) || $configArr['prefix'] == '') {
-//            throw new Exception('Must specify a prefix of your ID');
-//        }
-        
         if (array_key_exists('where', $configArr)) {
             if (is_string($configArr['where']))
                 throw new Exception('where clause must be an array, you provided string');
@@ -95,8 +94,6 @@ class UniqueIdGenerator
             $suffixLength = strlen($configArr['suffix']);
         }
     
-       // $resetOnChange= prefix, $resetOnChange= suffix, $resetOnChange= both,
-        
         $resetOnChange = array_key_exists('reset_on_change', $configArr) ? $configArr['reset_on_change'] : false;
         $length = $configArr['length'];
         
@@ -130,13 +127,12 @@ class UniqueIdGenerator
             }
             
             $queryResult = DB::select($maxQuery);
-            $maxFullId = $queryResult[0]->maxid;
+            $maxFullId = $queryResult[0]->maxid ?? '';
             
-           // $maxId = substr($maxFullId, $prefixLength,$length-$suffixLength);
             $maxId = substr($maxFullId, $prefixLength,$idLength);
             return $prefix.str_pad((int)$maxId + 1, $idLength, '0', STR_PAD_LEFT).$suffix;
-        } else {
-            return $prefix . str_pad(1, $idLength, '0', STR_PAD_LEFT).$suffix;
         }
+
+        return $prefix . str_pad(1, $idLength, '0', STR_PAD_LEFT).$suffix;
     }
 }

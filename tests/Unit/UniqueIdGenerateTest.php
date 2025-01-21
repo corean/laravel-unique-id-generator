@@ -1,6 +1,6 @@
-<?php namespace sirajcse\UniqueIdGenerator\Tests\Unit;
+<?php namespace corean\UniqueIdGenerator\Tests\Unit;
 
-use sirajcse\UniqueIdGenerator\UniqueIdGenerator;
+use corean\UniqueIdGenerator\UniqueIdGenerator;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 

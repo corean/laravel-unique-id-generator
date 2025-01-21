@@ -1,4 +1,4 @@
-<?php namespace sirajcse\UniqueIdGenerator;
+<?php namespace corean\UniqueIdGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class UniqueIdGeneratorServiceProvider extends ServiceProvider
     
     public function register()
     {
-        $this->app->make('sirajcse\UniqueIdGenerator\UniqueIdGenerator');
+        $this->app->make('corean\UniqueIdGenerator\UniqueIdGenerator');
     }
 
 }

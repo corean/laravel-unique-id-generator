@@ -8,7 +8,7 @@
 
 # Installation
 
-    composer require sirajcse/laravel-unique-id-generator
+    composer require corean/laravel-unique-id-generator
 
 ##### How to use it? You can use it in your controller code like as a helper or inside your model by defining a boot method.
 
@@ -32,7 +32,7 @@ Inv-000001/12/21
 ## Example with controller
 
     Import ID generator for Prefix
-    use sirajcse\UniqueIdGenerator\UniqueIdGenerator;
+    use corean\UniqueIdGenerator\UniqueIdGenerator;
 
 ### For Prefix
 
